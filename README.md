@@ -43,7 +43,7 @@ index="apache_logs" method=POST | timechart span=1h count
 index="apache_logs" | iplocation clientip | search Country!="United States" | stats count by _time, Country
 ```
 
-**Windows — failed-activity / brute-force** *(representative rule logic — reconstructed from the report's described alert; the report specifies an hourly failed-activity count with a threshold of 50 but does not print the SPL)*.
+**Windows — failed-activity / brute-force** *(representative rule logic, reconstructed from the report's described alert; the report specifies an hourly failed-activity count with a threshold of 50 but does not print the SPL)*.
 
 ```spl
 index=windows_server_logs signature="*failure*"
@@ -52,7 +52,7 @@ index=windows_server_logs signature="*failure*"
 | where failed_activity > 50
 ```
 
-**Windows — successful-login spike** *(representative rule logic — reconstructed from the report's described alert; hourly successful-login count, threshold 80)*.
+**Windows — successful-login spike** *(representative rule logic, reconstructed from the report's described alert; hourly successful-login count, threshold 80)*.
 
 ```spl
 index=windows_server_logs signature="An account was successfully logged on"
@@ -61,7 +61,7 @@ index=windows_server_logs signature="An account was successfully logged on"
 | where logins > 80
 ```
 
-**Windows — account deletion** *(representative rule logic — reconstructed from the report's described alert; hourly deletion count, threshold tuned to 50)*.
+**Windows — account deletion** *(representative rule logic, reconstructed from the report's described alert; hourly deletion count, threshold tuned to 50)*.
 
 ```spl
 index=windows_server_logs signature="A user account was deleted"
@@ -84,7 +84,7 @@ Full SIEM implementation report with dashboard screenshots, alert thresholds, an
 
 ## Related
 
-This is the detection side of the same coursework. For the offensive counterpart — a red-team engagement against an intentionally vulnerable environment — see **[rekall-penetration-testing](https://github.com/tylerbcrawford/rekall-penetration-testing)**.
+This is the detection side of the same coursework. For the offensive counterpart, a red-team engagement against an intentionally vulnerable environment, see **[rekall-penetration-testing](https://github.com/tylerbcrawford/rekall-penetration-testing)**.
 
 ## Context
 
