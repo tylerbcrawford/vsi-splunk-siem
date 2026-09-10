@@ -7,6 +7,8 @@
 
 Custom SIEM built in Splunk for a fictional company (Virtual Space Industries). Team of three acting as SOC analysts, UofT cybersecurity program (2024).
 
+> **About this write-up.** The lab work here was done during the University of Toronto Cybersecurity Bootcamp in 2024. The write-up and repo structure were prepared afterwards with Claude Code from my notes and artifacts. Reconstructed SPL is labeled as such.
+
 ## The Setup
 
 We ingested historical logs from a Windows Server and an Apache web server into Splunk, established baselines, then built reports, alerts, and dashboards. Simulated attack logs were then loaded so we could check whether our detection rules caught the activity.
